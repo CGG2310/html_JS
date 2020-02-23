@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript (Class)</h2>
+
+<p>In this example we demonstrate a simple class definition and how to use it.</p>
+
+<p id="demo"></p>
+
+<script>
+//se crea una clase
+class Console{
+  constructor(brand, model, color, weight, capacity) {
+  //propiedades de la clase
+    this.brand = brand;
+    this.model = model;
+    this.color = color;
+    this.weight = weight;
+    this.capacity = capacity;
+  }
+  //se crea una estructura de texto
+  present(){ 
+  return "<br>I have a "+ this.brand+" / "+ this.model+" / "+ this.color+" / "+ this.weight+" / "+ this.capacity  ;
+  }
+}
+//Se crea un objeto perteneciente a la clase y se define sus propiedades
+fc= new Console("Xbox", "One S", "Green", "2.9 kg", "1 Tb");
+sc= new Console("Playstation", "4 Pro","Blue", "3.3 kg", "1 Tb");
+tc= new Console("Nintendo", "Switch", "Red", "398 g", "32 Gb");
+frc= new Console("Nintendo", "Gamecube", "Purple", "2.6 kg", "24 Mb");
+ffc= new Console("Google", "Stadia", "White", "267 g", "Nube");
+
+//se busca y se combinan el objeto (fc,sc,tc...) con la oración (present)y se imprime
+document.getElementById("demo").innerHTML = fc.present()+ sc.present()+ tc.present()+ frc.present()+ ffc.present();
+
+</script>
+
+</body>
+</html>
