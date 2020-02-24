@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>JavaScript Class Inheritance</h2>
+
+    <p>Use the "extends" keyword to inherit all methods from another class.</p>
+    <p>Use the "super" method to call the parent's constructor function.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        
+class Impresora {
+  constructor(brand) {
+    this.carname = brand;
+  }
+//se estructura una oración
+  present() {
+    return 'I have a ' + this.carname;
+  }
+}
+//se estructura la "herencia"
+class Model extends Impresora {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+
+// hace empleo de Get and Set el cuál permite cambiar la variables
+
+    get cnam() {
+    return this.carname;
+  }
+  set cnam(x) {
+    this.carname = x;
+  }
+  
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+ /*     se define la clase y la herencia de la siguiente forma; 
+       (nombreDeLaVariable) = new Model ("la Clase" , "La Herencia")
+    
+       EJEMPLO: */
+        myprinter = new Model("Hp", "DeskJet 3700");
+        //sintaxis para aplicar get and set
+        myprinter.carname = "Hp";
+        
+document.getElementById("demo").innerHTML = myprinter.show();
+    </script>
+
+</body>
+</html>
